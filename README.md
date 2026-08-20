@@ -51,4 +51,4 @@ the full request flow with external HTTP calls mocked.
 
 ## Demo
 
-See the Loom walkthrough: <link>
+See the Loom walkthrough: _link to be added_
