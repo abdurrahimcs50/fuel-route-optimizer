@@ -11,3 +11,5 @@ geocode_stations.log
 server.log
 .pytest_cache/
 LOOM_SCRIPT.md
+.specs/
+CLAUDE.md
