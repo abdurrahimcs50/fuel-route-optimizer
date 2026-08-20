@@ -1,0 +1,72 @@
+{
+  "info": {
+    "name": "Fuel Route Optimizer API",
+    "description": "Spotter AI take-home assessment demo requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8000" }
+  ],
+  "item": [
+    {
+      "name": "Short route (no fuel stops needed)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/route/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"start_location\": \"Austin, TX\",\n  \"finish_location\": \"Dallas, TX\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Long route (one fuel stop, cost-optimal not nearest)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/route/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"start_location\": \"Houston, TX\",\n  \"finish_location\": \"Kansas City, MO\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Cross-country route (many fuel stops)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/route/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"start_location\": \"Los Angeles, CA\",\n  \"finish_location\": \"New York, NY\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Invalid input (identical start/finish -> 400)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/route/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"start_location\": \"Austin, TX\",\n  \"finish_location\": \"Austin, TX\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Invalid input (ungeocodable location -> 422)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "{{base_url}}/api/route/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"start_location\": \"Zzzxxqqwwnowhereplace123\",\n  \"finish_location\": \"Austin, TX\"\n}"
+        }
+      }
+    }
+  ]
+}

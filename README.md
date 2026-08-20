@@ -32,6 +32,12 @@ curl -X POST http://localhost:8000/api/route/ \
   -d '{"start_location": "Los Angeles, CA", "finish_location": "Dallas, TX"}'
 ```
 
+A ready-to-import `postman_collection.json` is included at the repo root
+with example requests (short route, long multi-stop route, cross-country,
+and invalid-input cases). With `DEBUG=True` (the default), the API is also
+browsable directly — visit `http://localhost:8000/api/route/` in a browser
+for a form to submit requests without any client at all.
+
 ## Tests
 
 ```bash
