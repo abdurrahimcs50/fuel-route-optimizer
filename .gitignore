@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+db.sqlite3
+.venv/
+venv/
+*.egg-info/
+.DS_Store
+staticfiles/
+geocode_stations.log
+server.log
+.pytest_cache/
