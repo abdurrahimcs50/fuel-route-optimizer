@@ -1,0 +1,9 @@
+{% extends "rest_framework/base.html" %}
+
+{% block title %}{% if name %}{{ name }} – {% endif %}Fuel Route Optimizer{% endblock %}
+
+{% block branding %}
+  <a class='navbar-brand' href='/api/route/'>
+      Fuel Route Optimizer API
+  </a>
+{% endblock %}
