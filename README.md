@@ -6,11 +6,15 @@ fuel cost, using the provided fuel price dataset.
 
 Built for the Spotter AI Backend Django Engineer take-home assessment.
 
-## Development workflow
+## Docs
 
-This repo follows spec-driven development. See `CLAUDE.md` for the full
-workflow, and `.specs/001-fuel-route-api/spec.md` for the current feature
-spec.
+- [`docs/architecture.md`](docs/architecture.md) — system design, request
+  flow, and why the external API call count doesn't scale with route
+  length or stop count.
+- [`docs/algorithm.md`](docs/algorithm.md) — the fuel-stop selection
+  algorithm, step by step.
+- [`docs/api.md`](docs/api.md) — full API reference: request/response
+  shapes and error codes.
 
 ## Setup
 
@@ -18,7 +22,7 @@ spec.
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env   # no API keys needed — OSRM + Nominatim are free/keyless; see plan.md
+cp .env.example .env   # no API keys needed — OSRM + Nominatim are free/keyless
 python manage.py migrate
 python manage.py geocode_stations   # one-time, ~65 min: geocode data/fuel-prices-for-be-assessment.csv
 python manage.py runserver
